@@ -10,7 +10,10 @@ on:
   workflow_dispatch:
   pull_request:
     types: ["opened", "reopened", "synchronize"]
-
+  schedule:
+      # One a day
+      - cron: 0 0 * * *
+  
 jobs:
   publish-nightly:
     runs-on: ubuntu-latest
