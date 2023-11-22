@@ -1,7 +1,7 @@
 import { exec } from "child_process";
-import { getTitleOfLatestCommit } from "../util/git";
 import { parsePrComments } from "./comment-parser";
 import { promisify } from "util";
+import { getTitleOfLatestCommit } from "../util/octokit";
 
 const execAsync = promisify(exec);
 

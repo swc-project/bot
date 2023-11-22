@@ -1,3 +1,4 @@
+import { Octokit } from "@octokit/rest";
 import { exec } from "child_process";
 import { type Stream } from "stream";
 
@@ -8,16 +9,6 @@ async function streamToString(stream: Stream): Promise<string> {
         stream.on("error", (err) => reject(err));
         stream.on("end", () => resolve(Buffer.concat(chunks).toString("utf8")));
     });
-}
-
-export async function getTitleOfLatestCommit(): Promise<string> {
-    const { stdout } = await exec("git log -1 --pretty=%B");
-
-    const msg = await streamToString(stdout!);
-
-    const s = msg.trim();
-
-    return s.split("\n")[0];
 }
 
 export async function getCommitSha(): Promise<string> {

@@ -1,13 +1,11 @@
 import { getTitleOfLatestCommit } from "./util/git";
-import { octokit } from "./util/octokit";
+import { octokit, owner, repo } from "./util/octokit";
 
 // We only auto-rebase if the latest commit message is one of
 //
 // - test(*)
 // - chore:
 
-const owner = "swc-project";
-const repo = "swc";
 
 function sleep(ms: number) {
     return new Promise((r) => setTimeout(r, ms));

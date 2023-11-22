@@ -4,6 +4,9 @@ export const octokit = new Octokit({
     auth: process.env.GITHUB_TOKEN,
 });
 
+export const owner = "swc-project";
+export const repo = "swc";
+
 export function getCurrentPrNumber(): number {
     const ref = process.env.GITHUB_REF;
     if (!ref) {
@@ -21,4 +24,18 @@ export function getCurrentPrNumber(): number {
             `Cannot get current pr number because GITHUB_REF is not 'refs/pull/:prNumber/merge'`
         );
     }
+}
+
+
+
+export async function getTitleOfLatestCommit(): Promise<string> {
+    const commit=await octokit.repos.getCommit({
+        owner,
+        repo,
+        ref: "main",
+    });
+    
+    const s =commit.data.commit.message.trim();
+
+    return s.split("\n")[0];
 }
