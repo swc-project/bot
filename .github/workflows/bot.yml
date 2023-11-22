@@ -27,7 +27,6 @@ jobs:
           yarn
 
       - name: Rebase a PR
-        working-directory: scripts/bot
         run: |
           npx ts-node src/auto-rebase.ts
         env:
