@@ -29,13 +29,13 @@ export function getCurrentPrNumber(): number {
 
 
 export async function getTitleOfLatestCommit(): Promise<string> {
-    const commit=await octokit.repos.getCommit({
+    const commit = await octokit.repos.getCommit({
         owner,
         repo,
         ref: "main",
     });
-    
-    const s =commit.data.commit.message.trim();
+
+    const s = commit.data.commit.message.trim();
 
     return s.split("\n")[0];
 }
