@@ -15,6 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     concurrency: auto-rebase
     steps:
+      - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v3
         with:
           node-version: "16"
@@ -24,6 +26,7 @@ jobs:
           yarn
 
       - name: Rebase a PR
+        working-directory: scripts/bot
         run: |
           npx ts-node src/auto-rebase.ts
         env:
