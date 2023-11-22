@@ -1,5 +1,4 @@
-import { getTitleOfLatestCommit } from "./util/git";
-import { octokit, owner, repo } from "./util/octokit";
+import { getTitleOfLatestCommit, octokit, owner, repo } from "./util/octokit";
 
 // We only auto-rebase if the latest commit message is one of
 //
