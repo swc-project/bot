@@ -52,7 +52,7 @@ jobs:
         with:
           repository: "swc-project/swc"
           ref: "main"
-          fetch-depth: 1100
+          fetch-depth: 0
           path: './swc'
 
       - name: Install latest nightly
