@@ -30,7 +30,6 @@ function sleep(ms: number) {
         sort: 'updated',
         direction: "desc",
     });
-    console.log(allPrs.data)
 
     const autoMergePrs = allPrs.data.filter((pr) => !!pr.labels.find((label) => label.name === "automerge"));
 
