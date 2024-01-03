@@ -13,6 +13,7 @@ function sleep(ms: number) {
 (async () => {
     const latestCommitMessage = await getTitleOfLatestCommit();
 
+    console.log('Bot repository')
     console.log(`Latest commit message: ${latestCommitMessage}`);
 
     if (!latestCommitMessage.startsWith("chore:")) {
