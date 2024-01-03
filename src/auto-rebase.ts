@@ -27,7 +27,7 @@ function sleep(ms: number) {
         owner,
         repo,
         state: "open",
-        sort: "long-running",
+        sort: 'updated',
         direction: "desc",
     });
     console.log(allPrs.data)
