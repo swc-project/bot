@@ -31,7 +31,9 @@ function sleep(ms: number) {
         direction: "desc",
     });
 
-    const autoMergePrs = allPrs.data.filter((pr) => !!pr.labels.find((label) => label.name === "automerge"));
+    const autoMergePrs = allPrs.data.filter((pr) => {
+        return !!pr.auto_merge || !!pr.labels.find((label) => label.name === "automerge")
+    });
 
     if (autoMergePrs.length === 0) {
         console.log(`No PRs with auto-merge enabled`);
