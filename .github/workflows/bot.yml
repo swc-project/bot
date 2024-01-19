@@ -60,6 +60,13 @@ jobs:
         with:
           toolchain: nightly
 
+      - name: Install cargo-mono
+        uses: baptiste0928/cargo-install@v2.2.0
+        with:
+          crate: cargo-mono
+          version: "0.3.7"
+          locked: true
+
       - name: Install git-cliff
         uses: baptiste0928/cargo-install@v2.2.0
         with:
