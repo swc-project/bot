@@ -44,7 +44,15 @@ jobs:
           version: "0.3.7"
           locked: true
 
-
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "yarn"
+  
+      - name: Install node dependencies
+        run: |
+            yarn
+  
       - name: Publish crates
         env:
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
