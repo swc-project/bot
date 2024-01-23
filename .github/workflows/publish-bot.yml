@@ -13,8 +13,8 @@ on:
   pull_request:
     types: ["opened", "reopened", "synchronize"]
   schedule:
-      # One a day
-      - cron: 0 0 * * *
+      # Once per 3 days
+      - cron: "0 0 */3 * *"
   
 jobs:
   publish-crates:
