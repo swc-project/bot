@@ -51,6 +51,7 @@ jobs:
   
       - name: Install node dependencies
         run: |
+            corepack enable
             yarn
   
       - name: Publish crates
