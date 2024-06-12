@@ -97,7 +97,7 @@ jobs:
           version: "0.12.2"
           locked: true
   
-      - run: cargo xtask npm nightly --git
+      - run: cargo xtask npm nightly
 
       - uses: webfactory/ssh-agent@v0.5.4
         with:
