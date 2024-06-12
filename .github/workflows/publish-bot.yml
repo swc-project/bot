@@ -82,6 +82,7 @@ jobs:
           ref: "main"
 
       - run: corepack enable
+      - run: yarn
 
       - uses: actions-rs/toolchain@v1
         with:
