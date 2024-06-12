@@ -81,6 +81,8 @@ jobs:
           repository: "swc-project/swc"
           ref: "main"
 
+      - run: corepack enable
+
       - uses: actions-rs/toolchain@v1
         with:
           profile: minimal
