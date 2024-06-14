@@ -92,7 +92,6 @@ jobs:
       - name: Update lockfile
         working-directory: ./swc
         if: steps.bump.outcome == 'success' && steps.bump.conclusion == 'success'
-        continue-on-error: true
         run: |
           cargo metadata --format-version 1 > /dev/null
 
