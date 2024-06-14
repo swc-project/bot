@@ -1,4 +1,4 @@
-name: "Publish (auto)"
+name: "Publish (nightly)"
 
 env:
   GIT_AUTHOR_NAME: "SWC Bot"
@@ -12,9 +12,9 @@ on:
   workflow_dispatch:
   pull_request:
     types: ["opened", "reopened", "synchronize"]
-  schedule:
-      # Once per 5 days
-      - cron: "0 0 */5 * *"
+  # schedule:
+  #     # Once per 5 days
+  #     - cron: "0 0 */5 * *"
   
 jobs:
   publish-crates:
