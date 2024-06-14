@@ -1,4 +1,4 @@
-name: Bot
+name: 'Rebase & Bump'
 on:
   - repository_dispatch
   - workflow_dispatch
