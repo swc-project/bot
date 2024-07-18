@@ -64,7 +64,7 @@ jobs:
         uses: baptiste0928/cargo-install@v2.2.0
         with:
           crate: cargo-mono
-          version: "0.3.7"
+          version: "0.3.8"
           locked: true
 
       - name: Install git-cliff
